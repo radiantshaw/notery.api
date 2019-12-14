@@ -1,5 +1,9 @@
 module ApplicationHelper
   def current_user
-    request.env['warden'].user
+    warden.user
+  end
+
+  def warden
+    request.env['warden']
   end
 end
