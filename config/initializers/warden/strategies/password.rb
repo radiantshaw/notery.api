@@ -6,8 +6,8 @@ module Warden
       end
 
       def authenticate!
-        if user.present? && user.authenticate(password)
-          success!(user)
+        if record.present? && record.authenticate(password)
+          success!(record)
         else
           fail
         end
@@ -15,16 +15,16 @@ module Warden
 
       private
 
-      def user
-        @user ||= User.find_by(email: email)
+      def record
+        @record ||= User.find_by(email: email)
       end
 
       def email
-        params["email"]
+        params["user"]["email"]
       end
 
       def password
-        params["password"]
+        params["user"]["password"]
       end
     end
   end
