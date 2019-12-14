@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
-  def create
-    @user = request.env['warden'].authenticate
+  before_action :authenticate_user!, only: :create
 
-    unless @user.present?
+  def create
+    unless current_user.present?
       head :unprocessable_entity
     end
   end
