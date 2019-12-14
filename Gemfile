@@ -42,3 +42,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Rack-based authentication
 gem 'warden', '~> 1.2', '>= 1.2.8'
+
+# Middleware for parsing data for Rack
+gem 'rack-parser', '~> 0.7.0'
