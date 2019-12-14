@@ -26,7 +26,10 @@ module Warden
       end
 
       def token
-        @token ||= header.match(/Bearer\s(.+)/).captures[0]
+        @token ||= begin
+          matched = header.match(/Bearer\s(.+)/)
+          matched.captures[0] if matched.present?
+        end
       end
 
       def header
