@@ -45,3 +45,6 @@ gem 'warden', '~> 1.2', '>= 1.2.8'
 
 # Middleware for parsing data for Rack
 gem 'rack-parser', '~> 0.7.0'
+
+# To use JWT for token auth
+gem 'jwt', '~> 2.2', '>= 2.2.1'
