@@ -24,3 +24,4 @@
 # Ignore editor configs
 .vscode
 tags
+tags.*
