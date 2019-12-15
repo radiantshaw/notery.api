@@ -9,4 +9,8 @@ class Note < ApplicationRecord
     through: :shares,
     source: :user
   }
+
+  def share!(user, permission)
+    shares.create(user: user, permission: permission)
+  end
 end
