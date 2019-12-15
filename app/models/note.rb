@@ -12,8 +12,8 @@ class Note < ApplicationRecord
   }
 
   def share(user, permission)
-    share = shares.first_or_initialize(user: user)
-    share.permission = permission
-    share.save
+    shares.find_or_initialize_by(user: user).tap do |share|
+      share.permission = permission
+    end
   end
 end

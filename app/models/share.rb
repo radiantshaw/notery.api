@@ -3,4 +3,6 @@ class Share < ApplicationRecord
 
   belongs_to :note
   belongs_to :user
+
+  delegate :email, to: :user
 end

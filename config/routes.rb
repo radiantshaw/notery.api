@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :users, only: [:create]
   resources :sessions, only: [:create]
   resources :notes, except: [:new, :edit]
+  resources :shares, only: [:create]
 end
