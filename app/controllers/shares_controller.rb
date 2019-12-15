@@ -15,6 +15,15 @@ class SharesController < ApplicationController
     end
   end
 
+  def destroy
+    @share = Share.find(params[:id])
+    authorize(@share)
+
+    unless @share.destroy
+      head :unprocessable_entity
+    end
+  end
+
   private
 
   def share_params
