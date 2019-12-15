@@ -1,6 +1,7 @@
 class Note < ApplicationRecord
   belongs_to :user
   has_many :shares, dependent: :delete_all
+  has_many :interactors, through: :shares, source: :user
   has_many :contributors, lambda { where("shares.permission": :contributing) }, {
     through: :shares,
     source: :user

@@ -1,4 +1,8 @@
 class NotePolicy < ApplicationPolicy
+  def show?
+    user == record.user || record.interactors.include?(user)
+  end
+
   def create?
     user.present?
   end
