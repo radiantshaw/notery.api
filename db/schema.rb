@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2019_12_15_065421) do
 
   create_table "notes", force: :cascade do |t|
     t.text "content"
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_notes_on_user_id"
@@ -31,4 +31,5 @@ ActiveRecord::Schema.define(version: 2019_12_15_065421) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "notes", "users"
 end
