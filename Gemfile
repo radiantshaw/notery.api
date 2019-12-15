@@ -48,3 +48,6 @@ gem 'rack-parser', '~> 0.7.0'
 
 # To use JWT for token auth
 gem 'jwt', '~> 2.2', '>= 2.2.1'
+
+# For easy Authorization
+gem 'pundit', '~> 2.1'
