@@ -1,6 +1,10 @@
 class NotesController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @notes = policy_scope(Note)
+  end
+
   def show
     @note = Note.find(params[:id])
     authorize(@note)
