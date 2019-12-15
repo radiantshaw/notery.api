@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2019_12_15_071049) do
   end
 
   create_table "shares", force: :cascade do |t|
-    t.integer "type"
+    t.integer "permission"
     t.bigint "user_id", null: false
     t.bigint "note_id", null: false
     t.datetime "created_at", precision: 6, null: false
