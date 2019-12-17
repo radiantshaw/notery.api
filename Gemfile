@@ -51,3 +51,6 @@ gem 'jwt', '~> 2.2', '>= 2.2.1'
 
 # For easy Authorization
 gem 'pundit', '~> 2.1'
+
+# For CORS
+gem 'rack-cors', '~> 1.1'

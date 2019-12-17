@@ -1,10 +1,12 @@
 class NotePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.joins(:shares).where(%{
+      scope.joins(%{
+        LEFT JOIN shares ON shares.note_id = notes.id
+      }).where(%{
         notes.user_id = :user_id
         OR shares.user_id = :user_id
-      }, user_id: user.id)
+      }, user_id: user.id).distinct
     end
   end
 
