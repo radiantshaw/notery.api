@@ -10,11 +10,11 @@ gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-# gem 'jbuilder', '~> 2.7'
+gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -39,3 +39,18 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Rack-based authentication
+gem 'warden', '~> 1.2', '>= 1.2.8'
+
+# Middleware for parsing data for Rack
+gem 'rack-parser', '~> 0.7.0'
+
+# To use JWT for token auth
+gem 'jwt', '~> 2.2', '>= 2.2.1'
+
+# For easy Authorization
+gem 'pundit', '~> 2.1'
+
+# For CORS
+gem 'rack-cors', '~> 1.1'
