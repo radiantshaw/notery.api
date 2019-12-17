@@ -6,7 +6,7 @@ class NotePolicy < ApplicationPolicy
       }).where(%{
         notes.user_id = :user_id
         OR shares.user_id = :user_id
-      }, user_id: user.id)
+      }, user_id: user.id).distinct
     end
   end
 
